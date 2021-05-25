@@ -25,7 +25,7 @@ public class Ground {
 	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(1, 1);
+		tx.scale(4, 4);
 	}
 
 	// converts image to make it drawable in paint
