@@ -12,7 +12,7 @@ public class Ground {
 
 	public Ground() {
 		//the filename to the file is referenced here for the bg image
-		img = getImage("backgroundfruityninja.png");
+		img = getImage("back.jpg");
 		init(x, y);//initializes the location of the image on th e screen
 	}
 	
@@ -25,7 +25,7 @@ public class Ground {
 	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(1, 1);
+		tx.scale(.5,.5);
 	}
 
 	// converts image to make it drawable in paint
