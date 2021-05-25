@@ -5,8 +5,8 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class Melon {
-	private int x, y;
+public class Bomb {
+	private int x,y;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	
@@ -14,8 +14,8 @@ public class Melon {
 	private int vy, vx = 0;
 	
 	
-	public Melon() {
-		img = getImage("watermelon.png");
+	public Bomb() {
+		img = getImage("bomb.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
 		y = (int)(Math.random()*(100+1)+0); //randomize y within the frame
 		vx = (int)(Math.random()*(2)+0);
@@ -45,12 +45,12 @@ public class Melon {
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = Melon.class.getResource(path);
+			URL imageURL = Bomb.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return tempImage;
 	}
-	
+
 }
