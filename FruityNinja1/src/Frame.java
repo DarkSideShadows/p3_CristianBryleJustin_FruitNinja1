@@ -21,13 +21,21 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	Melon watermelon = new Melon();
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
+	long count = 0;
 	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
-		
+		count+=16;
 
 		foreground.paint(g);
+		
+		if(count >= 1000) {
+			
+		}
 		watermelon.paint(g);
+		
+		
+		
 		cutwatermelon.paint(g);
 		bomb.paint(g);
 		

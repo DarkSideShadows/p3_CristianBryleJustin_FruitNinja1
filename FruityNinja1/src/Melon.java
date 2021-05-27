@@ -12,19 +12,21 @@ public class Melon {
 	
 	private int acc = 1;
 	private int vy, vx = 0;
+	private boolean en = false;
 	
 	
 	public Melon() {
 		img = getImage("watermelon.png");
-		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = (int)(Math.random()*(100+1)+0); //randomize y within the frame
-		vx = (int)(Math.random()*(2)+0);
+		x = (int)(Math.random()*(700-50+1)+50); //randomize x within the frame
+		y = 600;
+		vx = (int)(Math.random()*(4))-2;
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
-		
+		vy = -35;		
 	}
 	public void paint(Graphics g) {
+		if(!en) return;
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
@@ -33,12 +35,12 @@ public class Melon {
 		y+=vy;
 		x+=vx;
 		
-		if(y>=500) {
+	/*	if(y>=500) {
 			vy*=-1;
 		}
 		if(y<20) {
 			vy*=-1;
-		}
+		} */
 	}
 
 
