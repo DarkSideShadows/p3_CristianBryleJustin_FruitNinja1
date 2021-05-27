@@ -17,20 +17,23 @@ public class Melon {
 	
 	public Melon() {
 		img = getImage("watermelon.png");
-		x = (int)(Math.random()*(700-50+1)+50); //randomize x within the frame
+		x = (int)(Math.random()*(900-0+1)+0); //randomize x within the frame
 		y = 600;
-		vx = (int)(Math.random()*(4))-2;
+		vx = (int)(Math.random()*(21))+0;
+		if(x>450) {
+			vx*=-1;
+		}
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
-		vy = -35;		
+		vy = -30;		
 	}
 	public void paint(Graphics g) {
-		if(!en) return;
+		//if(!en) return;
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
-		
+		tx.scale(1.6,1.6);
 		vy+=acc;
 		y+=vy;
 		x+=vx;

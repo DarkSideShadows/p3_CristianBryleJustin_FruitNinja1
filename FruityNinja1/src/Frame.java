@@ -29,9 +29,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		foreground.paint(g);
 		
-		if(count >= 1000) {
+		//for this one you should do a count that
+		//if it's greater than ___, it'll paint a new watermelon
+		//from the array of watermelon
+		//if(count >= 1000) {
 			
-		}
+		//}
 		watermelon.paint(g);
 		
 		
