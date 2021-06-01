@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import sun.audio.*;
 
 public class Frame extends JPanel implements ActionListener, MouseListener {
 	
@@ -22,7 +23,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
 	long count = 0;
-	
+	Music bang = new Music("bababooey.wav",false);
+Music point = new Music("androidsound.wav",false);
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
 		count+=16;
@@ -69,7 +71,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		point.play();
 	}
 
 	@Override
