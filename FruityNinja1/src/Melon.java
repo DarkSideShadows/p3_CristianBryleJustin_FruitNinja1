@@ -13,7 +13,7 @@ public class Melon {
 	
 	private int acc = 1;
 	private int vy, vx;
-	private boolean en = false;
+	//private boolean en = false;
 	
 	
 	public Melon() {
@@ -28,7 +28,7 @@ public class Melon {
 		
 	}
 	public void paint(Graphics g) {
-		if(!en) return;
+		//if(!en) return;
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
