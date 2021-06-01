@@ -74,16 +74,10 @@ Music point = new Music("androidsound.wav",false);
 	
 	public static void playMusic(String filepath) {
 		InputStream music;
-		try
-		{
-			music = new FileInputStream(new File(filepath));
-			AudioStream audios= new AudioSteam(music);
-			AudioPlayer.player.start(audios);
+		
+		
 		}
-		catch(Exception e) {
-			JOptionPane.showMessageDialog("Error");
-		}
-	}
+	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
