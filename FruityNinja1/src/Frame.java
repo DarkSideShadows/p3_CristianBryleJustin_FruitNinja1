@@ -36,7 +36,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		
 	//Fruit Ninja startup 
 	}
-	//hi
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
@@ -85,10 +84,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
-	//	watermelon.collided(x, y);
-		
-	//send mouse x and y to duck object 
-	
 
 	
 	}

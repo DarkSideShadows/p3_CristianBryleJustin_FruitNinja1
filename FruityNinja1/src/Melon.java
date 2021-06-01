@@ -12,17 +12,18 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	
 	private int acc = 1;
-	private int vy, vx = 0;
+	private int vy, vx;
 	
 	
 	public Melon() {
 		img = getImage("watermelon.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = (int)(Math.random()*(100+1)+0); //randomize y within the frame
+		y = 600; //randomize y outside the frame
 		vx = (int)(Math.random()*(2)+0);
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
+		vy = -4;
 		
 	}
 	public void paint(Graphics g) {
@@ -30,16 +31,17 @@ public class Melon {
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		
-		vy+=acc;
+		if(y<400) {
+			vy+=acc;
+		}
+		if(y>=400) {
+			vy-=acc;
+		}
+		
 		y+=vy;
 		x+=vx;
 		
-		if(y>=500) {
-			vy*=-1;
-		}
-		if(y<20) {
-			vy*=-1;
-		}
+
 	}
 
 
