@@ -11,7 +11,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import sun.audio.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import javax.swing.JOptionPane;
+
+
 
 public class Frame extends JPanel implements ActionListener, MouseListener {
 	
@@ -67,10 +72,22 @@ Music point = new Music("androidsound.wav",false);
 		//config code 
 	}
 	
-	
+	public static void playMusic(String filepath) {
+		InputStream music;
+		try
+		{
+			music = new FileInputStream(new File(filepath));
+			AudioStream audios= new AudioSteam(music);
+			AudioPlayer.player.start(audios);
+		}
+		catch(Exception e) {
+			JOptionPane.showMessageDialog("Error");
+		}
+	}
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+	
 		point.play();
 	}
 
