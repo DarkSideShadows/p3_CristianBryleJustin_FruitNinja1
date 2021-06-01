@@ -1,4 +1,6 @@
 import java.awt.Color;
+
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -23,6 +25,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	Bomb bomb = new Bomb();
 	long count = 0;
 	
+	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
 		count+=16;
@@ -41,7 +44,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		
 	//Fruit Ninja startup 
 	}
-	//hi
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
@@ -90,10 +92,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
-	//	watermelon.collided(x, y);
-		
-	//send mouse x and y to duck object 
-	
 
 	
 	}
