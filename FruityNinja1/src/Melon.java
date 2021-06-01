@@ -12,7 +12,8 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	
 	private int acc = 1;
-	private int vy, vx;
+	private int vy, vx = 0;
+	private boolean en = false;
 	
 	
 	public Melon() {
@@ -27,6 +28,7 @@ public class Melon {
 		
 	}
 	public void paint(Graphics g) {
+		if(!en) return;
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
@@ -41,7 +43,6 @@ public class Melon {
 		y+=vy;
 		x+=vx;
 		
-
 	}
 
 
