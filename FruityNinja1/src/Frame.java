@@ -1,4 +1,6 @@
 import java.awt.Color;
+
+
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -21,6 +23,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	Melon watermelon = new Melon();
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
+	
 	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	

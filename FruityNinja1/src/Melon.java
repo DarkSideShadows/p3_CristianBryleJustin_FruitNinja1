@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
@@ -51,6 +52,20 @@ public class Melon {
 			e.printStackTrace();
 		}
 		return tempImage;
+	}
+	
+	public boolean collide(int mX, int mY) {
+		Rectangle a = new Rectangle(x,y,100,100);
+		Rectangle b = new Rectangle(x,y,100,100);
+		
+		if(a.contains(mX,mY)) {
+			//if collides 
+			//add point
+			//and replace the melon with cutwatermelon
+			// also play sound
+			return true;
+		}
+		return false;
 	}
 	
 }
