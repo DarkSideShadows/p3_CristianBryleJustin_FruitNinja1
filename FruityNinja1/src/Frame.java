@@ -13,6 +13,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import javax.swing.JOptionPane;
+
+
 
 public class Frame extends JPanel implements ActionListener, MouseListener {
 	
@@ -24,8 +30,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
 	long count = 0;
-	
-	
+
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
 		count+=16;
@@ -67,11 +72,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		//config code 
 	}
 	
+	public static void playMusic(String filepath) {
+		InputStream music;
+		
+		
+		}
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+	
+		point.play();
 	}
 
 	@Override
