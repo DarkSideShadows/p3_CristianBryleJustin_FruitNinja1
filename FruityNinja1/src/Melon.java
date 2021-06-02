@@ -12,7 +12,7 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	
 	private int acc = 1;
-	private int vy, vx = 0;
+	private int vy, vx;
 	private boolean en = false;
 	
 	
