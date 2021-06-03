@@ -22,9 +22,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
 	long count = 0;
-	
+
+
 	Music bang = new Music("bababooey.wav",false);
-	Music point = new Music("androidsound.wav",false);
+Music point = new Music("androidsound.wav",false);
+
 	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
@@ -96,7 +98,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
-	//	watermelon.collided(x, y);
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
 		
 	//send mouse x and y to duck object 
 	
