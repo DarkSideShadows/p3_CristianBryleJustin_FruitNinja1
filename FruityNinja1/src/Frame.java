@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,40 +15,29 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener {
 	
-	//Objects that need to be drawn on the JFrame in the paint method.
-	//write the code to create a ground object as one of ur instance variables
-	Timer t;
 	Ground foreground = new Ground();
-	Melon watermelon = new Melon();
 	CutWatermelon cutwatermelon = new CutWatermelon();
-	Bomb bomb = new Bomb();
-	long count = 0;
-	
-	Music bang = new Music("bababooey.wav",false);
-	Music point = new Music("androidsound.wav",false);
+	Bomb[] b = new Bomb[25];
+	int count, i = 0;
+	ArrayList<Melon> m = new ArrayList<Melon>();
+	Music bang = new Music ("bababooey.wav",false);
+	Music point = new Music ("androidsound.wav",false);
 	
 	public void paint(Graphics g) {
-	super.paintComponent(g);	
-		count+=16;
-
-		foreground.paint(g);
-		
-		//for this one you should do a count that
-		//if it's greater than ___, it'll paint a new watermelon
-		//from the array of watermelon
-		//if(count >= 1000) {
-			
-		//}
-		watermelon.paint(g);
-		
-		
+		super.paintComponent(g);
+		count++;
+	
+		if(count==10) {
+			m.get(i).paint(g);
+			m.get(i).updateVel(-30);
+			i++;
+			count = 0;
+		}
 		
 		cutwatermelon.paint(g);
-		bomb.paint(g);
-		
-	//Fruit Ninja startup 
+		foreground.paint(g);
 	}
-	//hi
+	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
@@ -68,7 +58,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
-		//config code 
+		
 	}
 	
 	
@@ -96,12 +86,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
-	//	watermelon.collided(x, y);
 		
-	//send mouse x and y to duck object 
-	
-
-	
 	}
 
 	@Override

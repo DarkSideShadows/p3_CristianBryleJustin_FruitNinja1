@@ -9,7 +9,6 @@ public class Bomb {
 	private int x,y;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
-	
 	private int acc = 1;
 	private int vy, vx = 0;
 	
@@ -17,8 +16,9 @@ public class Bomb {
 	public Bomb() {
 		img = getImage("bomb.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = (int)(Math.random()*(100+1)+0); //randomize y within the frame
-		vx = (int)(Math.random()*(2)+0);
+		y = 600; //randomize y within the frame
+		vx = (int)(Math.random()*(11)+4);
+		
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
