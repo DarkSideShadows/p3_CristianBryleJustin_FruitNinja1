@@ -62,6 +62,8 @@ public class Melon {
 		Rectangle b = new Rectangle(x,y,100,100);
 		
 		if(a.contains(mX,mY)) {
+			x=1000;
+			
 			//if collides 
 			//add point
 			//and replace the melon with cutwatermelon
