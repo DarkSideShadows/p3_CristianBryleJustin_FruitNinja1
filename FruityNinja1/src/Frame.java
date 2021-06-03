@@ -22,9 +22,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb bomb = new Bomb();
 	long count = 0;
-	
-	Music bang = new Music("bababooey.wav",false);
-	Music point = new Music("androidsound.wav",false);
+
+
+	//Music bang = new Music("bababooey.wav",false);
+//Music point = new Music("androidsound.wav",false);
+
 	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
@@ -75,7 +77,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		bang.play();
+		//bang.play();
 	}
 
 	@Override
