@@ -1,6 +1,4 @@
 import java.awt.Color;
-
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -25,8 +23,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	Bomb bomb = new Bomb();
 	long count = 0;
 
-	Music bang = new Music("bababooey.wav",false);
-Music point = new Music("androidsound.wav",false);
+
+	//Music bang = new Music("bababooey.wav",false);
+//Music point = new Music("androidsound.wav",false);
+
 	
 	public void paint(Graphics g) {
 	super.paintComponent(g);	
@@ -34,9 +34,12 @@ Music point = new Music("androidsound.wav",false);
 
 		foreground.paint(g);
 		
-		if(count >= 1000) {
+		//for this one you should do a count that
+		//if it's greater than ___, it'll paint a new watermelon
+		//from the array of watermelon
+		//if(count >= 1000) {
 			
-		}
+		//}
 		watermelon.paint(g);
 		
 		
@@ -46,6 +49,7 @@ Music point = new Music("androidsound.wav",false);
 		
 	//Fruit Ninja startup 
 	}
+	//hi
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
@@ -73,7 +77,7 @@ Music point = new Music("androidsound.wav",false);
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		//bang.play();
 	}
 
 	@Override
@@ -94,6 +98,10 @@ Music point = new Music("androidsound.wav",false);
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
+	//	watermelon.collided(x, y);
+		
+	//send mouse x and y to duck object 
+	
 
 	
 	}
