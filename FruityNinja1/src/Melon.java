@@ -17,14 +17,15 @@ public class Melon {
 	public Melon() {
 		img = getImage("watermelon.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = 600; //randomize y outside the frame
-		vx = (int)(Math.random()*(2)+0);
+		y = 600; //place watermelon outside
+		vx = (int)(Math.random()*(3-2+1)+2);
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
 		vy = -4;
 		
 	}
+	
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
@@ -37,24 +38,10 @@ public class Melon {
 		if(y>=400) {
 			vy-=acc;
 		}
-		
 		y+=vy;
 		x+=vx;
-		
 	}
 
-
-	private Image getImage(String path) {
-		Image tempImage = null;
-		try {
-			URL imageURL = Melon.class.getResource(path);
-			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return tempImage;
-	}
-	
 	public void updateVel(int pvy) {
 		vy = pvy;
 	}
@@ -73,6 +60,17 @@ public class Melon {
 			return true;
 		}
 		return false;
+	}
+
+	private Image getImage(String path) {
+		Image tempImage = null;
+		try {
+			URL imageURL = Melon.class.getResource(path);
+			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tempImage;
 	}
 	
 }

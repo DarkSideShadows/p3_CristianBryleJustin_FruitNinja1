@@ -28,16 +28,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		count++;
-	
-		if(count==10) {
-			m[i].paint(g);
-			m[i].updateVel(-30);
-			i++;
-			count = 0;
-		}
-		
-		cutwatermelon.paint(g);
 		foreground.paint(g);
+		bomb.paint(g);
+		watermelon.paint(g);
+		cutwatermelon.paint(g);
 	}
 	
 	public static void main(String[] arg) {
