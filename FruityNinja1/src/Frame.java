@@ -16,11 +16,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
-	Bomb[] b = new Bomb[25];
-	int count, i = 0;
-	Melon[] m = new Melon[100];
-	Music bang = new Music ("bababooey.wav",false);
-	Music point = new Music ("androidsound.wav",false);
+	Melon watermelon = new Melon();
+	Bomb bomb = new Bomb();
+	long count = 0;
+
+
+	Music bang = new Music("bababooey.wav",false);
+	Music point = new Music("androidsound.wav",false);
+
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -85,6 +88,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
+		
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
 		
 	}
 
