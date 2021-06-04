@@ -9,19 +9,20 @@ public class Bomb {
 	private int x,y;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
-	
 	private int acc = 1;
-	private int vy, vx = 0;
+	private int vy, vx;
 	
 	
 	public Bomb() {
 		img = getImage("bomb.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = (int)(Math.random()*(100+1)+0); //randomize y within the frame
-		vx = (int)(Math.random()*(2)+0);
+		y = 600; //randomize y within the frame
+		vx = (int)(Math.random()*(3-2+1)+2);
+		
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
+		vy=-4;
 		
 	}
 	public void paint(Graphics g) {
@@ -29,16 +30,15 @@ public class Bomb {
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		
-		vy+=acc;
+		if(y<400) {
+			vy+=acc;
+		}
+		if(y>=400) {
+			vy-=acc;
+		}
+		
 		y+=vy;
 		x+=vx;
-		
-		if(y>=500) {
-			vy*=-1;
-		}
-		if(y<20) {
-			vy*=-1;
-		}
 	}
 
 
