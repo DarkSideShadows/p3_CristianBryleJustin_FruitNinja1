@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +18,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	CutWatermelon cutwatermelon = new CutWatermelon();
 	Bomb[] b = new Bomb[25];
 	int count, i = 0;
-	ArrayList<Melon> m = new ArrayList<Melon>();
+	Melon[] m = new Melon[100];
 	Music bang = new Music ("bababooey.wav",false);
 	Music point = new Music ("androidsound.wav",false);
 	
@@ -28,8 +27,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		count++;
 	
 		if(count==10) {
-			m.get(i).paint(g);
-			m.get(i).updateVel(-30);
+			m[i].paint(g);
+			m[i].updateVel(-30);
 			i++;
 			count = 0;
 		}
