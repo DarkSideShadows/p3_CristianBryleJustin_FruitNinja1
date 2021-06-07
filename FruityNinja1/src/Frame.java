@@ -23,7 +23,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
-
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -108,12 +107,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 
 		int x =arg0.getX();
 		int y =	arg0.getY();
-		
-		m[h].collide(x, y);
-		if(m[h].collide(x, y)) {
-			point.play();
-		}
-		
 	}
 
 	@Override
@@ -126,6 +119,24 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		repaint();
+	}
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		int x =arg0.getX();
+		int y =	arg0.getY();
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
+		System.out.println(x);
+		System.out.println(y);
+		
+	}
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
