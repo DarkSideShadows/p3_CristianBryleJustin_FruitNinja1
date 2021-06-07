@@ -17,22 +17,32 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
-	Melon watermelon = new Melon();
-	Bomb bomb = new Bomb();
-	long count = 0;
-
+	Melon[] m = new Melon[100];
+	Bomb[] b = new Bomb[100];
+	int count1, count2;
+	int i,h = 0;
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
-
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		count++;
+		count1++;
+		count2++;
+
 		foreground.paint(g);
-		bomb.paint(g);
-		watermelon.paint(g);
-		cutwatermelon.paint(g);
+		//cutwatermelon.paint(g);
+		
+		if(count1==210) {
+			i++;
+			count1=0;
+		}
+		if(count2==70) {
+			h++;
+			count2=0;
+		}
+		b[i].paint(g);
+		m[h].paint(g);
 	}
 	
 	public static void main(String[] arg) {
@@ -45,11 +55,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		JFrame f = new JFrame("Fruity Ninja");
 		f.setSize(new Dimension(900, 600));
 
-		//f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
 		f.addMouseMotionListener(this);
 		f.setResizable(false);
+		
+		for(int i = 0; i<b.length;i++) {
+			b[i] = new Bomb();
+		}
+		for(int i = 0; i<m.length;i++) {
+			m[i] = new Melon();
+		}
 		
 		Timer t = new Timer(16, this);
 		t.start();
@@ -59,12 +75,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		
 	}
 	
-	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		bang.play();
-		
 	}
 
 	@Override
@@ -82,16 +96,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-
-
-		int x =arg0.getX();
-		int y =	arg0.getY();
-		
-		watermelon.collide(x, y);
-		if(watermelon.collide(x, y)) {
-			point.play();
-		}
-
 		
 	}
 
@@ -106,19 +110,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		// TODO Auto-generated method stub
 		repaint();
 	}
+	
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		int x =arg0.getX();
 		int y =	arg0.getY();
-		watermelon.collide(x, y);
-		if(watermelon.collide(x, y)) {
+		m[h].collide(x, y);
+		if(m[h].collide(x, y)) {
 			point.play();
 		}
-		System.out.println(x);
-		System.out.println(y);
-		
 	}
+	
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

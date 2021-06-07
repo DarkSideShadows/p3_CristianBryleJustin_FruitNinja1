@@ -12,9 +12,8 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
 	private int vy, vx;
-
-	Music point = new Music("androidsound.wav", false);
-
+	boolean enabled = true;
+	
 	public Melon() {
 		img = getImage("watermelon.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
@@ -23,28 +22,41 @@ public class Melon {
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
-		vy = -4;
+		vy = (int)(Math.random()*(-4+26+1)-26);
 		
 	}
 	
 	public void paint(Graphics g) {
+		if(!enabled) {
+			return;
+		}
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(1.6, 1.6);
 		
-		if(y<400) {
+		update();
+	}
+	
+	public void update() {
+		if(y<450) {
 			vy+=acc;
 		}
-		if(y>=400) {
+		if(y>=450) {
 			vy-=acc;
+		}
+		if(y>600) {
+			y=999999999;
 		}
 		y+=vy;
 		x+=vx;
 	}
 
-	public void updateVel(int pvy) {
-		vy = pvy;
+	public void setEnabled(boolean hi) {
+		enabled = hi;
+	}
+	public boolean isEnabled() {
+		return enabled;
 	}
 	
 	public boolean collide(int mX, int mY) {
@@ -53,8 +65,6 @@ public class Melon {
 		
 		if(a.contains(mX,mY)) {
 			x=1000;
-			point.play();
-			//score++;
 			
 			//if collides 
 			//add point

@@ -11,7 +11,7 @@ public class Bomb {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
 	private int vy, vx;
-	
+	boolean enabled = true;
 	
 	public Bomb() {
 		img = getImage("bomb.png");
@@ -22,26 +22,41 @@ public class Bomb {
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
-		vy=-4;
-		
+		vy = (int)(Math.random()*(-4+26+1)-26);
 	}
+	
 	public void paint(Graphics g) {
+		if(!enabled) {
+			return;
+		}
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		
-		if(y<400) {
+		update();
+	}
+	
+	public void update() {
+		if(y<450) {
 			vy+=acc;
 		}
-		if(y>=400) {
+		if(y>=450) {
 			vy-=acc;
 		}
-		
+		if(y>600) {
+			y=999999999;
+		}
 		y+=vy;
 		x+=vx;
 	}
-
-
+	
+	public void setEnabled(boolean hi) {
+		enabled = hi;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
