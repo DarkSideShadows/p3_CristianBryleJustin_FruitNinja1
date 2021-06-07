@@ -6,13 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Frame extends JPanel implements ActionListener, MouseListener {
+public class Frame extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
@@ -47,6 +48,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		//f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
+		f.addMouseMotionListener(this);
 		f.setResizable(false);
 		
 		Timer t = new Timer(16, this);
@@ -62,6 +64,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		bang.play();
+		
 	}
 
 	@Override
@@ -80,6 +83,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 
+
 		int x =arg0.getX();
 		int y =	arg0.getY();
 		
@@ -87,6 +91,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		if(watermelon.collide(x, y)) {
 			point.play();
 		}
+
 		
 	}
 
@@ -100,6 +105,24 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		repaint();
+	}
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		int x =arg0.getX();
+		int y =	arg0.getY();
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
+		System.out.println(x);
+		System.out.println(y);
+		
+	}
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

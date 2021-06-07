@@ -12,7 +12,7 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
 	private int vy, vx;
-	
+
 	
 	public Melon() {
 		img = getImage("watermelon.png");
@@ -52,6 +52,8 @@ public class Melon {
 		
 		if(a.contains(mX,mY)) {
 			x=1000;
+			point.play();
+			//score++;
 			
 			//if collides 
 			//add point
