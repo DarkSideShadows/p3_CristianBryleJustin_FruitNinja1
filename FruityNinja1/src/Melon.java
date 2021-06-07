@@ -13,7 +13,8 @@ public class Melon {
 	private int acc = 1;
 	private int vy, vx;
 
-	
+	Music point = new Music("androidsound.wav", false);
+
 	public Melon() {
 		img = getImage("watermelon.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
