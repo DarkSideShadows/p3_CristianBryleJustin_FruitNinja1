@@ -31,26 +31,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		count2++;
 
 		foreground.paint(g);
-		cutwatermelon.paint(g);
+		//cutwatermelon.paint(g);
 		
-		if(count1==70) {
-			b[i].setEnabled(true);
-			if(b[i].isEnabled()) {
-				b[i].updateVel(-4);
-			}
+		if(count1==210) {
 			i++;
 			count1=0;
 		}
 		if(count2==70) {
-			m[h].setEnabled(true);
-			if(m[h].isEnabled()) {
-				m[h].updateVel(-4);
-			}
 			h++;
 			count2=0;
 		}
-		m[h].paint(g);
 		b[i].paint(g);
+		m[h].paint(g);
 	}
 	
 	public static void main(String[] arg) {
@@ -63,7 +55,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		JFrame f = new JFrame("Fruity Ninja");
 		f.setSize(new Dimension(900, 600));
 
-		//f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
 		f.addMouseMotionListener(this);
@@ -83,7 +74,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		f.setVisible(true);
 		
 	}
-	
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
@@ -106,9 +96,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-
-		int x =arg0.getX();
-		int y =	arg0.getY();
+		
 	}
 
 	@Override
@@ -122,6 +110,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		// TODO Auto-generated method stub
 		repaint();
 	}
+	
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
@@ -132,6 +121,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			point.play();
 		}
 	}
+	
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub

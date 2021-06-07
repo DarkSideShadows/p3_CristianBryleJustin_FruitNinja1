@@ -12,8 +12,7 @@ public class Melon {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
 	private int vy, vx;
-	boolean enabled = false;
-	
+	boolean enabled = true;
 	
 	public Melon() {
 		img = getImage("watermelon.png");
@@ -23,7 +22,7 @@ public class Melon {
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
 		}
-		vy = (int)(Math.random()*(-4+20+1)-20);
+		vy = (int)(Math.random()*(-4+26+1)-26);
 		
 	}
 	
@@ -38,6 +37,7 @@ public class Melon {
 		
 		update();
 	}
+	
 	public void update() {
 		if(y<450) {
 			vy+=acc;
@@ -46,24 +46,19 @@ public class Melon {
 			vy-=acc;
 		}
 		if(y>600) {
-			x = 99999;
+			y=999999999;
 		}
 		y+=vy;
 		x+=vx;
 	}
 
-	public void setEnabled(boolean pe) {
-		enabled = pe;
+	public void setEnabled(boolean hi) {
+		enabled = hi;
 	}
 	public boolean isEnabled() {
 		return enabled;
 	}
-	public void updateVel(int pvy) {
-		vy = pvy;
-	}
-	public void setY(int py) {
-		y = py;
-	}
+	
 	public boolean collide(int mX, int mY) {
 		Rectangle a = new Rectangle(x,y,100,100);
 		Rectangle b = new Rectangle(x,y,100,100);
@@ -90,4 +85,5 @@ public class Melon {
 		}
 		return tempImage;
 	}
+	
 }
