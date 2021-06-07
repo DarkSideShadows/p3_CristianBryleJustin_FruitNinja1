@@ -16,10 +16,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
-	Melon watermelon = new Melon();
-	Bomb bomb = new Bomb();
-	long count = 0;
-
+	Melon[] m = new Melon[100];
+	Bomb[] b = new Bomb[100];
+	int count1, count2;
+	int i,h = 0;
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
@@ -27,11 +27,30 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		count++;
+		count1++;
+		count2++;
+
 		foreground.paint(g);
-		bomb.paint(g);
-		watermelon.paint(g);
 		cutwatermelon.paint(g);
+		
+		if(count1==70) {
+			b[i].setEnabled(true);
+			if(b[i].isEnabled()) {
+				b[i].paint(g);
+				b[i].updateVel(-4);
+			}
+			i++;
+			count1=0;
+		}
+		if(count2==70) {
+			m[h].setEnabled(true);
+			if(m[h].isEnabled()) {
+				m[h].paint(g);
+				m[h].updateVel(-4);
+			}
+			h++;
+			count2=0;
+		}
 	}
 	
 	public static void main(String[] arg) {
@@ -48,6 +67,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		f.add(this);
 		f.addMouseListener(this);
 		f.setResizable(false);
+		
+		for(int i = 0; i<b.length;i++) {
+			b[i] = new Bomb();
+		}
+		for(int i = 0; i<m.length;i++) {
+			m[i] = new Melon();
+		}
 		
 		Timer t = new Timer(16, this);
 		t.start();
@@ -83,8 +109,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		int x =arg0.getX();
 		int y =	arg0.getY();
 		
-		watermelon.collide(x, y);
-		if(watermelon.collide(x, y)) {
+		m[h].collide(x, y);
+		if(m[h].collide(x, y)) {
 			point.play();
 		}
 		
