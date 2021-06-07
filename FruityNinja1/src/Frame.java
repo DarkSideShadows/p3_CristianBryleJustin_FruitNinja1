@@ -6,13 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Frame extends JPanel implements ActionListener, MouseListener {
+public class Frame extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
 	
 	//Objects that need to be drawn on the JFrame in the paint method.
 	//write the code to create a ground object as one of ur instance variables
@@ -63,6 +64,7 @@ Music point = new Music("androidsound.wav",false);
 		//f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
+		f.addMouseMotionListener(this);
 		f.setResizable(false);
 		
 		Timer t = new Timer(16, this);
@@ -78,6 +80,7 @@ Music point = new Music("androidsound.wav",false);
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		bang.play();
+		
 	}
 
 	@Override
@@ -96,12 +99,7 @@ Music point = new Music("androidsound.wav",false);
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 
-		int x =arg0.getX();
-		int y =	arg0.getY();
-		watermelon.collide(x, y);
-		if(watermelon.collide(x, y)) {
-			point.play();
-		}
+		
 		
 	//send mouse x and y to duck object 
 	
@@ -119,6 +117,24 @@ Music point = new Music("androidsound.wav",false);
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		repaint();
+	}
+	@Override
+	public void mouseDragged(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		int x =arg0.getX();
+		int y =	arg0.getY();
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
+		System.out.println(x);
+		System.out.println(y);
+		
+	}
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

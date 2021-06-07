@@ -14,7 +14,7 @@ public class Melon {
 	private int acc = 1;
 	private int vy, vx;
 	//private boolean en = false;
-	
+	Music point = new Music("androidsound.wav", false);
 	
 	public Melon() {
 		img = getImage("watermelon.png");
@@ -63,6 +63,8 @@ public class Melon {
 		
 		if(a.contains(mX,mY)) {
 			x=1000;
+			point.play();
+			//score++;
 			
 			//if collides 
 			//add point
