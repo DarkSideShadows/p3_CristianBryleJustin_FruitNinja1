@@ -6,13 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Frame extends JPanel implements ActionListener, MouseListener {
+public class Frame extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
@@ -35,7 +36,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		if(count1==70) {
 			b[i].setEnabled(true);
 			if(b[i].isEnabled()) {
-				b[i].paint(g);
 				b[i].updateVel(-4);
 			}
 			i++;
@@ -44,12 +44,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		if(count2==70) {
 			m[h].setEnabled(true);
 			if(m[h].isEnabled()) {
-				m[h].paint(g);
 				m[h].updateVel(-4);
 			}
 			h++;
 			count2=0;
 		}
+		m[h].paint(g);
+		b[i].paint(g);
 	}
 	
 	public static void main(String[] arg) {
@@ -65,6 +66,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		//f.setBackground(Color.blue);
 		f.add(this);
 		f.addMouseListener(this);
+		f.addMouseMotionListener(this);
 		f.setResizable(false);
 		
 		for(int i = 0; i<b.length;i++) {
@@ -125,13 +127,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener {
 		// TODO Auto-generated method stub
 		int x =arg0.getX();
 		int y =	arg0.getY();
-		watermelon.collide(x, y);
-		if(watermelon.collide(x, y)) {
+		m[h].collide(x, y);
+		if(m[h].collide(x, y)) {
 			point.play();
 		}
-		System.out.println(x);
-		System.out.println(y);
-		
 	}
 	@Override
 	public void mouseMoved(MouseEvent e) {
