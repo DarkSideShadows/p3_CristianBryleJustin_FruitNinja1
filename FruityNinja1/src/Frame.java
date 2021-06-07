@@ -15,42 +15,26 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, MouseMotionListener {
 	
-	//Objects that need to be drawn on the JFrame in the paint method.
-	//write the code to create a ground object as one of ur instance variables
-	Timer t;
 	Ground foreground = new Ground();
-	Melon watermelon = new Melon();
 	CutWatermelon cutwatermelon = new CutWatermelon();
+	Melon watermelon = new Melon();
 	Bomb bomb = new Bomb();
 	long count = 0;
 
 
 	Music bang = new Music("bababooey.wav",false);
-Music point = new Music("androidsound.wav",false);
+	Music point = new Music("androidsound.wav",false);
 
 	
 	public void paint(Graphics g) {
-	super.paintComponent(g);	
-		count+=16;
-
+		super.paintComponent(g);
+		count++;
 		foreground.paint(g);
-		
-		//for this one you should do a count that
-		//if it's greater than ___, it'll paint a new watermelon
-		//from the array of watermelon
-		//if(count >= 1000) {
-			
-		//}
-		watermelon.paint(g);
-		
-		
-		
-		cutwatermelon.paint(g);
 		bomb.paint(g);
-		
-	//Fruit Ninja startup 
+		watermelon.paint(g);
+		cutwatermelon.paint(g);
 	}
-	//hi
+	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 		
@@ -72,7 +56,7 @@ Music point = new Music("androidsound.wav",false);
 		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
-		//config code 
+		
 	}
 	
 	
@@ -99,12 +83,16 @@ Music point = new Music("androidsound.wav",false);
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 
-		
-		
-	//send mouse x and y to duck object 
-	
 
-	
+		int x =arg0.getX();
+		int y =	arg0.getY();
+		
+		watermelon.collide(x, y);
+		if(watermelon.collide(x, y)) {
+			point.play();
+		}
+
+		
 	}
 
 	@Override

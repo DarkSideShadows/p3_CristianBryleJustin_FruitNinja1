@@ -9,17 +9,26 @@ public class CutWatermelon {
 	private int x=9999, y=9999;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
+	int count = 0;
 	
 	public CutWatermelon() {
 		img = getImage("cutwatermelon.png");
-		//init(x , y);
-		
 	}
+	
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 	}
-
+	
+	public boolean appear() {
+		count++;
+		if(count==100) {
+			tx.setToTranslation(x, y);
+			count = 0;
+			return true;
+		}
+		return false;
+	}
 
 	private Image getImage(String path) {
 		Image tempImage = null;
