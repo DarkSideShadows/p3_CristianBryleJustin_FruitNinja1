@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -27,6 +28,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	
 	int c1,c2,c3,c4,c5,c6;
 	int q,w,e,r,t,y = 0;
+	
+	int p1Score = 0;
+	Font verdana = new Font("Verdana", Font.BOLD,40);
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
@@ -126,6 +130,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			pu[i].paint(g);
 			ba[i].paint(g);
 			k[i].paint(g);
+			
+			//score
+			g.setFont(verdana);//set the font
+			   //drawing text on the screen + using variables
+			   g.drawString(""+p1Score, 150,100);		   
+			 	
+			   
 		}
 	}
 	
@@ -211,21 +222,30 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		for(int i = 0; i<100;i++) {
 //			if(b[i].collide(mX, mY)) {
 //				//point.play();
+			//p1Score+=100;
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
+				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
 				//point.play();
+				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
 				//point.play();
+				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
 				//point.play();
+				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
 				//point.play();
+				p1Score+=50;
+			}
+			if(m[i].collide(mX, mY)) {
+				//bomp play or something
 			}
 		}
 	}
