@@ -30,7 +30,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	int q,w,e,r,t,y = 0;
 	
 	int p1Score = 0;
-	Font verdana = new Font("Verdana", Font.BOLD,40);
+	Font verdana = new Font("Verdana", Font.BOLD,45);
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
@@ -134,7 +134,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			//score
 			g.setFont(verdana);//set the font
 			   //drawing text on the screen + using variables
-			   g.drawString(""+p1Score, 150,100);		   
+			   g.drawString(""+p1Score, 30,50);		   
 			 	
 			   
 		}
