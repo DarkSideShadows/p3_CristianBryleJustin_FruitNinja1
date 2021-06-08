@@ -40,7 +40,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		c3++;
 		c4++;
 		c5++;
-		c6++;
+		//c6++;
 		if(c1==200) {
 			q++;
 			c1=0;
@@ -67,10 +67,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		}
 		b[q].paint(g);
 		m[w].paint(g);
-//		p[e].paint(g);
-//		pu[r].paint(g);
-//		b[t].paint(g);
-//		k[y].paint(g);
+		//p[e].paint(g);
+		//pu[r].paint(g);
+		//ba[t].paint(g);
+		//k[y].paint(g);
 	}
 	
 	public static void main(String[] arg) {
@@ -150,11 +150,23 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		int x =arg0.getX();
-		int y =	arg0.getY();
-		m[w].collide(x, y);
-		if(m[w].collide(x, y)) {
-			point.play();
+		int mX =arg0.getX();
+		int mY =arg0.getY();
+		
+		if(m[w].collide(mX, mY)) {
+			//point.play();
+		}
+		if(p[e].collide(mX, mY)) {
+			//point.play();
+		}
+		if(pu[r].collide(mX, mY)) {
+			//point.play();
+		}
+		if(ba[t].collide(mX, mY)) {
+			//point.play();
+		}
+		if(k[y].collide(mX, mY)) {
+			//point.play();
 		}
 	}
 	

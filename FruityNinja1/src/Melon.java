@@ -17,7 +17,7 @@ public class Melon {
 	public Melon() {
 		img = getImage("watermelon.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = 600; //place watermelon outside
+		y = 600; //place melon outside
 		vx = (int)(Math.random()*(3-2+1)+2);
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
@@ -36,6 +36,7 @@ public class Melon {
 		tx.scale(1.6, 1.6);
 		
 		update();
+		//g.drawRect(x+35-vx,y+12-vy,88,89);
 	}
 	
 	public void update() {
@@ -60,12 +61,9 @@ public class Melon {
 	}
 	
 	public boolean collide(int mX, int mY) {
-		Rectangle a = new Rectangle(x,y,100,100);
-		Rectangle b = new Rectangle(x,y,100,100);
-		
+		Rectangle a = new Rectangle(x+35-vx,y+12-vy,88+5,89+5);
 		if(a.contains(mX,mY)) {
 			x=1000;
-			
 			//if collides 
 			//add point
 			//and replace the melon with cutwatermelon

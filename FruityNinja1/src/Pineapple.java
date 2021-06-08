@@ -36,6 +36,7 @@ public class Pineapple {
 		tx.scale(0.9, 0.9);
 		
 		update();
+		//g.drawRect(x+55-vx,y+60-vy,75,86);
 	}
 	
 	public void update() {
@@ -60,16 +61,9 @@ public class Pineapple {
 	}
 	
 	public boolean collide(int mX, int mY) {
-		Rectangle a = new Rectangle(x,y,100,100);
-		Rectangle b = new Rectangle(x,y,100,100);
-		
+		Rectangle a = new Rectangle(x+55-vx,y+60-vy,75+5,86+5);
 		if(a.contains(mX,mY)) {
 			x=1000;
-			
-			//if collides 
-			//add point
-			//and replace the melon with cutwatermelon
-			// also play sound
 			return true;
 		}
 		return false;

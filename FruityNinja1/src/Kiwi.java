@@ -17,7 +17,7 @@ public class Kiwi {
 	public Kiwi() {
 		img = getImage("kiwi.png");
 		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
-		y = 600; //place pineapple outside
+		y = 600; //place kiwi outside
 		vx = (int)(Math.random()*(3-2+1)+2);
 		if((int)(Math.random()*2)==1) {
 			vx *=-1;
@@ -36,6 +36,7 @@ public class Kiwi {
 		tx.scale(0.3, 0.3);
 		
 		update();
+		//g.drawRect(x+25-vx,y+25-vy,68,40);
 	}
 	
 	public void update() {
@@ -60,16 +61,9 @@ public class Kiwi {
 	}
 	
 	public boolean collide(int mX, int mY) {
-		Rectangle a = new Rectangle(x,y,100,100);
-		Rectangle b = new Rectangle(x,y,100,100);
-		
+		Rectangle a = new Rectangle(x+25-vx,y+25-vy,68+5,40+5);	
 		if(a.contains(mX,mY)) {
 			x=1000;
-			
-			//if collides 
-			//add point
-			//and replace the melon with cutwatermelon
-			// also play sound
 			return true;
 		}
 		return false;
