@@ -208,21 +208,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		// TODO Auto-generated method stub
 		int mX =arg0.getX();
 		int mY =arg0.getY();
-		
-		if(m[w].collide(mX, mY)) {
-			//point.play();
-		}
-		if(p[e].collide(mX, mY)) {
-			//point.play();
-		}
-		if(pu[r].collide(mX, mY)) {
-			//point.play();
-		}
-		if(ba[t].collide(mX, mY)) {
-			//point.play();
-		}
-		if(k[y].collide(mX, mY)) {
-			//point.play();
+		for(int i = 0; i<100;i++) {
+//			if(b[i].collide(mX, mY)) {
+//				//point.play();
+//			}
+			if(m[i].collide(mX, mY)) {
+				//point.play();
+			}
+			if(p[i].collide(mX, mY)) {
+				//point.play();
+			}
+			if(pu[i].collide(mX, mY)) {
+				//point.play();
+			}
+			if(ba[i].collide(mX, mY)) {
+				//point.play();
+			}
+			if(k[i].collide(mX, mY)) {
+				//point.play();
+			}
 		}
 	}
 	
