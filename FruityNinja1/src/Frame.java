@@ -17,32 +17,60 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	
 	Ground foreground = new Ground();
 	CutWatermelon cutwatermelon = new CutWatermelon();
-	Melon[] m = new Melon[100];
+	
 	Bomb[] b = new Bomb[100];
-	int count1, count2;
-	int i,h = 0;
+	Melon[] m = new Melon[100];
+	Pineapple[] p = new Pineapple[100];
+	Pumpkin[] pu = new Pumpkin[100];
+	Banana[] ba = new Banana[100];
+	Kiwi[] k = new Kiwi[100];
+	
+	int c1,c2,c3,c4,c5,c6;
+	int q,w,e,r,t,y = 0;
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		count1++;
-		count2++;
-
 		foreground.paint(g);
 		//cutwatermelon.paint(g);
-		
-		if(count1==210) {
-			i++;
-			count1=0;
+		c1++;
+		c2++;
+		c3++;
+		c4++;
+		c5++;
+		c6++;
+		if(c1==200) {
+			q++;
+			c1=0;
 		}
-		if(count2==70) {
-			h++;
-			count2=0;
+		if(c2==70) {
+			w++;
+			c2=0;
 		}
-		b[i].paint(g);
-		m[h].paint(g);
+		if(c3==100) {
+			e++;
+			c3=0;
+		}
+		if(c4==150) {
+			r++;
+			c4=0;
+		}
+		if(c5==150) {
+			t++;
+			c5=0;
+		}
+		if(c6==300) {
+			y++;
+			c6=0;
+		}
+		b[q].paint(g);
+		m[w].paint(g);
+//		p[e].paint(g);
+//		pu[r].paint(g);
+//		b[t].paint(g);
+//		k[y].paint(g);
 	}
 	
 	public static void main(String[] arg) {
@@ -51,28 +79,36 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	}
 	
 	public Frame() {
-
 		JFrame f = new JFrame("Fruity Ninja");
 		f.setSize(new Dimension(900, 600));
-
 		f.add(this);
 		f.addMouseListener(this);
 		f.addMouseMotionListener(this);
 		f.setResizable(false);
-		
+	
 		for(int i = 0; i<b.length;i++) {
 			b[i] = new Bomb();
 		}
 		for(int i = 0; i<m.length;i++) {
 			m[i] = new Melon();
 		}
+		for(int i = 0; i<p.length;i++) {
+			p[i] = new Pineapple();
+		}
+		for(int i = 0; i<pu.length;i++) {
+			pu[i] = new Pumpkin();
+		}
+		for(int i = 0; i<ba.length;i++) {
+			ba[i] = new Banana();
+		}
+		for(int i = 0; i<k.length;i++) {
+			k[i] = new Kiwi();
+		}
 		
 		Timer t = new Timer(16, this);
 		t.start();
-		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
-		
 	}
 	
 	@Override
@@ -116,8 +152,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		// TODO Auto-generated method stub
 		int x =arg0.getX();
 		int y =	arg0.getY();
-		m[h].collide(x, y);
-		if(m[h].collide(x, y)) {
+		m[w].collide(x, y);
+		if(m[w].collide(x, y)) {
 			point.play();
 		}
 	}
