@@ -6,28 +6,74 @@ import java.awt.geom.AffineTransform;
 import java.net.URL;
 
 public class CutWatermelon {
-	private int x=9999, y=9999;
+	private int x, y;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
-	int count = 0;
+	private int vy, vx = 0;
+	private int acc = 1;
+	boolean enabled = false;
 	
 	public CutWatermelon() {
 		img = getImage("cutwatermelon.png");
+		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
+		y = 600; //place cut melon outside
 	}
 	
 	public void paint(Graphics g) {
+		if(!enabled) {
+			return;
+		}
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
+		tx.setToTranslation(x, y);
+		tx.scale(1.2, 1.2);
+		
+		update();
 	}
 	
-	public boolean appear() {
-		count++;
-		if(count==100) {
-			tx.setToTranslation(x, y);
-			count = 0;
-			return true;
+	public void update() {
+		if(y<450) {
+			vy+=acc;
 		}
-		return false;
+		if(y>=450) {
+			vy-=acc;
+		}
+		if(y>600) {
+			y=999999999;
+		}
+		y+=vy;
+		x+=vx;
+	}
+	
+	public void setEnabled(boolean hi) {
+		enabled = hi;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void updateVelY(int pvy) {
+		vy = pvy;
+	}
+	public void updateVelX(int pvx) {
+		vx = pvx;
+	}
+	public int getVX() {
+		return vx;
+	}
+	public int getVY() {
+		return vy;
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int py) {
+		y = py;
+	}
+	public void setX(int px) {
+		x = px;
 	}
 
 	private Image getImage(String path) {

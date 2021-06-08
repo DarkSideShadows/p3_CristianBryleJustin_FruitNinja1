@@ -59,6 +59,9 @@ public class Kiwi {
 	public void updateVelX(int pvx) {
 		vx = pvx;
 	}
+	public void setX(int px) {
+		x = px;
+	}
 	
 	public boolean collide(int mX, int mY) {
 		Rectangle a = new Rectangle(x+25-vx,y+25-vy,68+5,40+5);	

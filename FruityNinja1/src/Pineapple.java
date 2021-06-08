@@ -59,6 +59,9 @@ public class Pineapple {
 	public void updateVelX(int pvx) {
 		vx = pvx;
 	}
+	public void setX(int px) {
+		x = px;
+	}
 	
 	public boolean collide(int mX, int mY) {
 		Rectangle a = new Rectangle(x+55-vx,y+60-vy,75+5,86+5);

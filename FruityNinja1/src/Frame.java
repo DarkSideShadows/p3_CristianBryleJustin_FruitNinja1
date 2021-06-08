@@ -25,6 +25,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	Banana[] ba = new Banana[100];
 	Kiwi[] k = new Kiwi[100];
 	
+	CutWatermelon[] cm = new CutWatermelon[100];
+	
 	int c1,c2,c3,c4,c5,c6;
 	int q,w,e,r,t,y = 0;
 
@@ -34,7 +36,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		foreground.paint(g);
-		//cutwatermelon.paint(g);
+		
+		int hi = 1;
+		if((int)(Math.random()*2)==1) {
+			hi = -1;
+		}
 		c1++;
 		c2++;
 		c3++;
@@ -42,90 +48,86 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		c5++;
 		c6++;
 		if(c1==200) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			b[q].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(b[q].isEnabled()) {
-				b[q].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				b[q].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				b[q].updateVelY(hello);
+				b[q].updateVelX(hi*bye);
 			}
 			q++;
 			c1=0;
 		}
 		if(c2==50) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			m[w].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(m[w].isEnabled()) {
-				m[w].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				m[w].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				m[w].updateVelY(hello);
+				m[w].updateVelX(hi*bye);
+//				if(cm[w].isEnabled()) {
+//					cm[w].setX(m[w].getX());
+//					cm[w].setY(m[w].getY());
+//					cm[w].updateVelY(m[w].getVY());
+//					cm[w].updateVelX(m[w].getVX());
+//				}
 			}
 			w++;
 			c2=0;
 		}
 		if(c3==100) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			p[e].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(p[e].isEnabled()) {
-				p[e].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				p[e].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				p[e].updateVelY(hello);
+				p[e].updateVelX(hi*bye);
 			}
 			e++;
 			c3=0;
 		}
 		if(c4==160) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			pu[r].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(pu[r].isEnabled()) {
-				pu[r].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				pu[r].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				pu[r].updateVelY(hello);
+				pu[r].updateVelX(hi*bye);
 			}
 			r++;
 			c4=0;
 		}
 		if(c5==140) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			ba[t].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(ba[t].isEnabled()) {
-				ba[t].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				ba[t].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				ba[t].updateVelY(hello);
+				ba[t].updateVelX(hi*bye);
 			}
 			t++;
 			c5=0;
 		}
 		if(c6==300) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			k[y].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(k[y].isEnabled()) {
-				k[y].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				k[y].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				k[y].updateVelY(hello);
+				k[y].updateVelX(hi*bye);
 			}
 			y++;
 			c6=0;
 		}
 		for(int i = 0; i<100;i++) {
-			b[i].paint(g);
+			//b[i].paint(g);
 			m[i].paint(g);
-			p[i].paint(g);
-			pu[i].paint(g);
-			ba[i].paint(g);
-			k[i].paint(g);
+			//p[i].paint(g);
+			//pu[i].paint(g);
+			//ba[i].paint(g);
+			//k[i].paint(g);
+			
+			cm[i].paint(g);
 		}
 	}
 	
@@ -142,23 +144,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		f.addMouseMotionListener(this);
 		f.setResizable(false);
 	
-		for(int i = 0; i<b.length;i++) {
+		for(int i = 0; i<100;i++) {
 			b[i] = new Bomb();
-		}
-		for(int i = 0; i<m.length;i++) {
 			m[i] = new Melon();
-		}
-		for(int i = 0; i<p.length;i++) {
 			p[i] = new Pineapple();
-		}
-		for(int i = 0; i<pu.length;i++) {
 			pu[i] = new Pumpkin();
-		}
-		for(int i = 0; i<ba.length;i++) {
 			ba[i] = new Banana();
-		}
-		for(int i = 0; i<k.length;i++) {
 			k[i] = new Kiwi();
+			
+			cm[i] = new CutWatermelon();
 		}
 		
 		Timer t = new Timer(16, this);
@@ -214,18 +208,23 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
+				cm[w].setEnabled(true);
 			}
 			if(p[i].collide(mX, mY)) {
 				//point.play();
+				//cp[e].setEnabled(true);
 			}
 			if(pu[i].collide(mX, mY)) {
 				//point.play();
+				//cpu[r].setEnabled(true);
 			}
 			if(ba[i].collide(mX, mY)) {
 				//point.play();
+				//cba[t].setEnabled(true);
 			}
 			if(k[i].collide(mX, mY)) {
 				//point.play();
+				//ck[y].setEnabled(true);
 			}
 		}
 	}
