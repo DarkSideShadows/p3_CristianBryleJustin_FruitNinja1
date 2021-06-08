@@ -226,23 +226,23 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
-				p1Score+=100;
+				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
 				//point.play();
-				p1Score+=100;
+				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
 				//point.play();
-				p1Score+=100;
+				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
 				//point.play();
-				p1Score+=100;
+				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
 				//point.play();
-				p1Score+=100;
+				p1Score+=50;
 			}
 			if(m[i].collide(mX, mY)) {
 				//bomp play or something
