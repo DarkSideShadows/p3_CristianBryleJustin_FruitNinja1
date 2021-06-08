@@ -10,19 +10,13 @@ public class Bomb {
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
-	private int vy, vx;
-	boolean enabled = true;
+	private int vy, vx = 0;
+	boolean enabled = false;
 	
 	public Bomb() {
 		img = getImage("bomb.png");
-		x = (int)(Math.random()*(700-200+1)+200); //randomize x within the frame
+		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
 		y = 600; //randomize y within the frame
-		vx = (int)(Math.random()*(3-2+1)+2);
-		
-		if((int)(Math.random()*2)==1) {
-			vx *=-1;
-		}
-		vy = (int)(Math.random()*(-4+26+1)-26);
 	}
 	
 	public void paint(Graphics g) {
@@ -56,6 +50,12 @@ public class Bomb {
 	}
 	public boolean isEnabled() {
 		return enabled;
+	}
+	public void updateVelY(int pvy) {
+		vy = pvy;
+	}
+	public void updateVelX(int pvx) {
+		vx = pvx;
 	}
 	
 	private Image getImage(String path) {

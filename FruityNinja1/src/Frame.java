@@ -40,37 +40,93 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		c3++;
 		c4++;
 		c5++;
-		//c6++;
+		c6++;
 		if(c1==200) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			b[q].setEnabled(true);
+			if(b[q].isEnabled()) {
+				b[q].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				b[q].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			q++;
 			c1=0;
 		}
-		if(c2==70) {
+		if(c2==50) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			m[w].setEnabled(true);
+			if(m[w].isEnabled()) {
+				m[w].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				m[w].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			w++;
 			c2=0;
 		}
 		if(c3==100) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			p[e].setEnabled(true);
+			if(p[e].isEnabled()) {
+				p[e].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				p[e].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			e++;
 			c3=0;
 		}
-		if(c4==150) {
+		if(c4==160) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			pu[r].setEnabled(true);
+			if(pu[r].isEnabled()) {
+				pu[r].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				pu[r].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			r++;
 			c4=0;
 		}
-		if(c5==150) {
+		if(c5==140) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			ba[t].setEnabled(true);
+			if(ba[t].isEnabled()) {
+				ba[t].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				ba[t].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			t++;
 			c5=0;
 		}
 		if(c6==300) {
+			int hi = 1;
+			if((int)(Math.random()*2)==1) {
+				hi = -1;
+			}
+			k[y].setEnabled(true);
+			if(k[y].isEnabled()) {
+				k[y].updateVelY((int)(Math.random()*(-4+26+1)-26));
+				k[y].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+			}
 			y++;
 			c6=0;
 		}
-		b[q].paint(g);
-		m[w].paint(g);
-		//p[e].paint(g);
-		//pu[r].paint(g);
-		//ba[t].paint(g);
-		//k[y].paint(g);
+		for(int i = 0; i<100;i++) {
+			b[i].paint(g);
+			m[i].paint(g);
+			p[i].paint(g);
+			pu[i].paint(g);
+			ba[i].paint(g);
+			k[i].paint(g);
+		}
 	}
 	
 	public static void main(String[] arg) {
