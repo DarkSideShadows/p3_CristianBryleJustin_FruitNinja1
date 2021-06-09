@@ -177,6 +177,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				 return;
 			 }	   
 		}
+    
 	}
 	
 	public static void main(String[] arg) {
