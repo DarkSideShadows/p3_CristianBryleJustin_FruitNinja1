@@ -24,12 +24,12 @@ public class Bomb {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(0.9, 0.9);
 		
 		update();
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+30-vx,y+10-vy,91,83);
 	}
 	

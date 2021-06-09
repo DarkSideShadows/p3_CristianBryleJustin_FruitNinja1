@@ -24,12 +24,12 @@ public class Pineapple {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(0.9, 0.9);
 		
 		update();
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+55-vx,y+60-vy,75,86);
 	}
 	

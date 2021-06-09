@@ -24,12 +24,12 @@ public class Melon {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(1.6, 1.6);
 		
 		update();
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+35-vx,y+12-vy,88,89);
 	}
 	

@@ -72,7 +72,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			q++;
 			c1=0;
 		}
-		if(c2==53) {
+		if(c2==53) { //every melon is active for 53*16 ms
 			m[w].setEnabled(true);
 			cm[w].setEnabled(true);
 			int hello = (int)(Math.random()*(-7+26+1)-26);
@@ -153,6 +153,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			c6=0;
 		}
 		for(int i = 0; i<100;i++) {
+			
 			b[i].paint(g);
 			m[i].paint(g);
 			p[i].paint(g);

@@ -24,12 +24,13 @@ public class Kiwi {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(0.35, 0.35);
 		
 		update();
+		
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+25-vx,y+25-vy,76,40);
 	}
 	
