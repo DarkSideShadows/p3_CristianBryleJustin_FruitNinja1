@@ -57,9 +57,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		c4++;
 		c5++;
 		c6++;
-		if(c1==200) {
+		if(c1==250) {
 			b[q].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(b[q].isEnabled()) {
 				b[q].updateVelY(hello);
@@ -68,10 +68,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			q++;
 			c1=0;
 		}
-		if(c2==50) {
+		if(c2==53) {
 			m[w].setEnabled(true);
 			cm[w].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(m[w].isEnabled()) {
 				m[w].updateVelY(hello);
@@ -84,10 +84,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			w++;
 			c2=0;
 		}
-		if(c3==100) {
+		if(c3==111) {
 			p[e].setEnabled(true);
 			cp[e].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(p[e].isEnabled()) {
 				p[e].updateVelY(hello);
@@ -100,10 +100,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			e++;
 			c3=0;
 		}
-		if(c4==160) {
+		if(c4==164) {
 			pu[r].setEnabled(true);
 			cpu[r].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(pu[r].isEnabled()) {
 				pu[r].updateVelY(hello);
@@ -116,10 +116,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			r++;
 			c4=0;
 		}
-		if(c5==140) {
+		if(c5==121) {
 			ba[t].setEnabled(true);
 			cba[t].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(ba[t].isEnabled()) {
 				ba[t].updateVelY(hello);
@@ -132,10 +132,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			t++;
 			c5=0;
 		}
-		if(c6==300) {
+		if(c6==302) {
 			k[y].setEnabled(true);
 			ck[y].setEnabled(true);
-			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int hello = (int)(Math.random()*(-7+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(k[y].isEnabled()) {
 				k[y].updateVelY(hello);

@@ -27,7 +27,7 @@ public class Kiwi {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
-		tx.scale(0.3, 0.3);
+		tx.scale(0.35, 0.35);
 		
 		update();
 		//g.drawRect(x+25-vx,y+25-vy,68,40);
