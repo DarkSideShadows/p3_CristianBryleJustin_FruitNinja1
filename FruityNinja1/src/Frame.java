@@ -37,10 +37,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	int q,w,e,r,t,y = 0;
 	
 	int p1Score = 0;
-
 	//Font verdana1 = new Font("Verdana", Font.BOLD,40);
 	Font lose = new Font("Verdana", Font.BOLD,100);
-
 	Font verdana = new Font("Verdana", Font.BOLD,45);
 
 
@@ -169,24 +167,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			ck[i].paint(g);
 			
 			//score
-
-			
-			//while(!hi) {
-				//g.setFont(verdana1);//set the font
-			   //drawing text on the screen + using variables
-			   g.drawString(""+p1Score, 150,100);	
-			//}
-			 if(b[q].getHi()) {
+			 if(b[i].getHi()) {
 				 g.setFont(lose);//set the font
 				 g.drawString("Game Over", 150,250);	
 			 }
 
-			//g.setFont(verdana1);//set the font
+			g.setFont(verdana);//set the font
 			//drawing text on the screen + using variables
 			g.drawString(""+p1Score, 30,50);		   
-			 	
-
-			   
 		}
 	}
 	
