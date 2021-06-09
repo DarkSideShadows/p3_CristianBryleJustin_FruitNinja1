@@ -30,7 +30,7 @@ public class Kiwi {
 		tx.scale(0.35, 0.35);
 		
 		update();
-		//g.drawRect(x+25-vx,y+25-vy,68,40);
+		//g.drawRect(x+25-vx,y+25-vy,76,40);
 	}
 	
 	public void update() {
@@ -79,7 +79,7 @@ public class Kiwi {
 	}
 	
 	public boolean collide(int mX, int mY) {
-		Rectangle a = new Rectangle(x+25-vx,y+25-vy,68+5,40+5);	
+		Rectangle a = new Rectangle(x+25-vx,y+25-vy,76+5,40+5);	
 		if(a.contains(mX,mY)) {
 			x=1000;
 			return true;

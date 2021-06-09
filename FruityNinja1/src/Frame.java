@@ -136,7 +136,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			t++;
 			c5=0;
 		}
-		if(c6==302) {
+		if(c6==202) {
 			k[y].setEnabled(true);
 			ck[y].setEnabled(true);
 			int hello = (int)(Math.random()*(-7+26+1)-26);
@@ -166,16 +166,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			cba[i].paint(g);
 			ck[i].paint(g);
 			
+			g.setFont(verdana);//set the font
+			//drawing text on the screen + using variables
+			g.drawString(""+p1Score, 30,50);	
+			
 			//score
 			 if(b[i].getHi()) {
 				 g.setFont(lose);//set the font
-				 g.drawString("Game Over", 150,250);	
-			 }
-
-			g.setFont(verdana);//set the font
-			//drawing text on the screen + using variables
-			g.drawString(""+p1Score, 100,70);		   
+				 g.drawString("Game Over", 150,250);
+				 return;
+			 }	   
 		}
+    
 	}
 	
 	public static void main(String[] arg) {
@@ -215,7 +217,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		bang.play();
 	}
 
 	@Override
@@ -255,39 +256,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		int mY =arg0.getY();
 		for(int i = 0; i<100;i++) {
 			if(b[i].collide(mX, mY)) {
-				//point.play();
 				b[i].setHi(true);
+				point.play();
 			}
 			if(m[i].collide(mX, mY)) {
-				//point.play();
 				cm[i].setAppear(true);
+				bang.play();
 				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cp[i].setAppear(true);
 				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cpu[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cba[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				ck[i].setAppear(true);
 				p1Score+=50;
 			}
-
-			if(m[i].collide(mX, mY)) {
-				
-			}
-
 		}
 		
 	}
