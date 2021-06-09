@@ -59,6 +59,24 @@ public class Pumpkin {
 	public void updateVelX(int pvx) {
 		vx = pvx;
 	}
+	public int getVX() {
+		return vx;
+	}
+	public int getVY() {
+		return vy;
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int py) {
+		y = py;
+	}
+	public void setX(int px) {
+		x = px;
+	}
 	
 	public boolean collide(int mX, int mY) {
 		Rectangle a = new Rectangle(x+30-vx,y+55-vy,135+5,85+5);

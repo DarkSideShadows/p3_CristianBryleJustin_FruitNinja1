@@ -26,6 +26,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	Banana[] ba = new Banana[100];
 	Kiwi[] k = new Kiwi[100];
 	
+	CutWatermelon[] cm = new CutWatermelon[100];
+	CutPineapple[] cp = new CutPineapple[100];
+	CutPumpkin[] cpu = new CutPumpkin[100];
+	CutBanana[] cba = new CutBanana[100];
+	CutKiwi[] ck = new CutKiwi[100];
+	
 	int c1,c2,c3,c4,c5,c6;
 	int q,w,e,r,t,y = 0;
 	
@@ -38,7 +44,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		foreground.paint(g);
-		//cutwatermelon.paint(g);
+		g.setFont(verdana);
+		g.setColor(Color.WHITE);
+		
+		int hi = 1;
+		if((int)(Math.random()*2)==1) {
+			hi = -1;
+		}
 		c1++;
 		c2++;
 		c3++;
@@ -46,79 +58,92 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		c5++;
 		c6++;
 		if(c1==200) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			b[q].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(b[q].isEnabled()) {
-				b[q].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				b[q].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				b[q].updateVelY(hello);
+				b[q].updateVelX(hi*bye);
 			}
 			q++;
 			c1=0;
 		}
 		if(c2==50) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			m[w].setEnabled(true);
+			cm[w].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(m[w].isEnabled()) {
-				m[w].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				m[w].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				m[w].updateVelY(hello);
+				m[w].updateVelX(hi*bye);
+				
+				cm[w].updateVelY(hello);
+				cm[w].updateVelX(hi*bye);
+				cm[w].setX(m[w].getX());
 			}
 			w++;
 			c2=0;
 		}
 		if(c3==100) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			p[e].setEnabled(true);
+			cp[e].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(p[e].isEnabled()) {
-				p[e].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				p[e].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				p[e].updateVelY(hello);
+				p[e].updateVelX(hi*bye);
+				
+				cp[e].updateVelY(hello);
+				cp[e].updateVelX(hi*bye);
+				cp[e].setX(p[e].getX());
 			}
 			e++;
 			c3=0;
 		}
 		if(c4==160) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			pu[r].setEnabled(true);
+			cpu[r].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(pu[r].isEnabled()) {
-				pu[r].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				pu[r].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				pu[r].updateVelY(hello);
+				pu[r].updateVelX(hi*bye);
+				
+				cpu[r].updateVelY(hello);
+				cpu[r].updateVelX(hi*bye);
+				cpu[r].setX(pu[r].getX());
 			}
 			r++;
 			c4=0;
 		}
 		if(c5==140) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			ba[t].setEnabled(true);
+			cba[t].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(ba[t].isEnabled()) {
-				ba[t].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				ba[t].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				ba[t].updateVelY(hello);
+				ba[t].updateVelX(hi*bye);
+				
+				cba[t].updateVelY(hello);
+				cba[t].updateVelX(hi*bye);
+				cba[t].setX(ba[t].getX());
 			}
 			t++;
 			c5=0;
 		}
 		if(c6==300) {
-			int hi = 1;
-			if((int)(Math.random()*2)==1) {
-				hi = -1;
-			}
 			k[y].setEnabled(true);
+			ck[y].setEnabled(true);
+			int hello = (int)(Math.random()*(-4+26+1)-26);
+			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(k[y].isEnabled()) {
-				k[y].updateVelY((int)(Math.random()*(-4+26+1)-26));
-				k[y].updateVelX(hi*(int)(Math.random()*(3-2+1)+2));
+				k[y].updateVelY(hello);
+				k[y].updateVelX(hi*bye);
+				
+				ck[y].updateVelY(hello);
+				ck[y].updateVelX(hi*bye);
+				ck[y].setX(k[y].getX());
 			}
 			y++;
 			c6=0;
@@ -131,10 +156,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			ba[i].paint(g);
 			k[i].paint(g);
 			
+			cm[i].paint(g);
+			cp[i].paint(g);
+			cpu[i].paint(g);
+			cba[i].paint(g);
+			ck[i].paint(g);
+			
 			//score
 			g.setFont(verdana);//set the font
-			   //drawing text on the screen + using variables
-			   g.drawString(""+p1Score, 30,50);		   
+			//drawing text on the screen + using variables
+			g.drawString(""+p1Score, 30,50);		   
 			 	
 			   
 		}
@@ -153,23 +184,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		f.addMouseMotionListener(this);
 		f.setResizable(false);
 	
-		for(int i = 0; i<b.length;i++) {
+		for(int i = 0; i<100;i++) {
 			b[i] = new Bomb();
-		}
-		for(int i = 0; i<m.length;i++) {
 			m[i] = new Melon();
-		}
-		for(int i = 0; i<p.length;i++) {
 			p[i] = new Pineapple();
-		}
-		for(int i = 0; i<pu.length;i++) {
 			pu[i] = new Pumpkin();
-		}
-		for(int i = 0; i<ba.length;i++) {
 			ba[i] = new Banana();
-		}
-		for(int i = 0; i<k.length;i++) {
 			k[i] = new Kiwi();
+			
+			cm[i] = new CutWatermelon();
+			cp[i] = new CutPineapple();
+			cpu[i] = new CutPumpkin();
+			cba[i] = new CutBanana();
+			ck[i] = new CutKiwi();
 		}
 		
 		Timer t = new Timer(16, this);
@@ -222,30 +249,32 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		for(int i = 0; i<100;i++) {
 //			if(b[i].collide(mX, mY)) {
 //				//point.play();
-			//p1Score+=100;
+				//p1Score+=100;
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
+				cm[i].setAppear(true);
 				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
 				//point.play();
+				cp[i].setAppear(true);
 				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
 				//point.play();
+				cpu[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
 				//point.play();
+				cba[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
 				//point.play();
+				ck[i].setAppear(true);
 				p1Score+=50;
-			}
-			if(m[i].collide(mX, mY)) {
-				//bomp play or something
 			}
 		}
 	}
