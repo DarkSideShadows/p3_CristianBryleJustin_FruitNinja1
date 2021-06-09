@@ -174,7 +174,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 
 			g.setFont(verdana);//set the font
 			//drawing text on the screen + using variables
-			g.drawString(""+p1Score, 30,50);		   
+			g.drawString(""+p1Score, 100,70);		   
 		}
 	}
 	
