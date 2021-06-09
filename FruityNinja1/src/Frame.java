@@ -44,7 +44,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	Font verdana = new Font("Verdana", Font.BOLD,40);
 	Font lose = new Font("Verdana", Font.BOLD,100);
 
-	Font verdana = new Font("Verdana", Font.BOLD,45);
+	Font test = new Font("Verdana", Font.BOLD,45);
 
 
 	Music bang = new Music("bababooey.wav",false);
