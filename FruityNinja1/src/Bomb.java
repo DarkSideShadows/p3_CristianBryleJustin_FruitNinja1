@@ -12,7 +12,7 @@ public class Bomb {
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
 	private int acc = 1;
 	private int vy, vx = 0;
-	boolean enabled = false;
+	boolean enabled,hi = false;
 	
 	public Bomb() {
 		img = getImage("bomb.png");
@@ -58,6 +58,12 @@ public class Bomb {
 	}
 	public void updateVelX(int pvx) {
 		vx = pvx;
+	}
+	public void setHi(boolean phi) {
+		hi = phi;
+	}
+	public boolean getHi() {
+		return hi;
 	}
 	
 	public boolean collide(int mX, int mY) {
