@@ -27,7 +27,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	Kiwi[] k = new Kiwi[100];
 	
 
-	boolean hi=false;
+	boolean yo=false;
 
 	CutWatermelon[] cm = new CutWatermelon[100];
 	CutPineapple[] cp = new CutPineapple[100];
@@ -44,7 +44,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	Font verdana = new Font("Verdana", Font.BOLD,40);
 	Font lose = new Font("Verdana", Font.BOLD,100);
 
-	Font verdana = new Font("Verdana", Font.BOLD,45);
+	
 
 
 	Music bang = new Music("bababooey.wav",false);
@@ -179,17 +179,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			   //drawing text on the screen + using variables
 			   g.drawString(""+p1Score, 150,100);	
 			//}
-			 if(hi==true) {
+			if(yo==true) {
 				 g.setFont(lose);//set the font
 				 g.drawString("Game Over", 150,250);	
 			 }
-
+				if(yo==true) {
 			g.setFont(verdana);//set the font
 			//drawing text on the screen + using variables
 			g.drawString(""+p1Score, 30,50);		   
 			 	
 
-			   
+}
 		}
 	}
 	
@@ -272,7 +272,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 
 			if(b[i].collide(mX, mY)) {
 				//point.play();
-			hi=true;
+			yo=true;
 		}
 
 //			if(b[i].collide(mX, mY)) {
