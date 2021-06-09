@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
-public class CutWatermelon {
+public class CutPumpkin {
 	private int x, y;
 	private Image img;
 	private AffineTransform tx = AffineTransform.getTranslateInstance(x, y);
@@ -13,8 +13,8 @@ public class CutWatermelon {
 	private int acc = 1;
 	boolean enabled, appear = false;
 	
-	public CutWatermelon() {
-		img = getImage("cutwatermelon.png");
+	public CutPumpkin() {
+		img = getImage("pumpkin dead.png");
 		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
 		y = 600; //place cut fruit outside
 	}

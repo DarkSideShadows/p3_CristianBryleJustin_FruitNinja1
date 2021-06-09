@@ -66,6 +66,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		}
 		if(c2==50) {
 			m[w].setEnabled(true);
+			cm[w].setEnabled(true);
 			int hello = (int)(Math.random()*(-4+26+1)-26);
 			int bye = (int)(Math.random()*(3-2+1)+2);
 			if(m[w].isEnabled()) {
@@ -132,6 +133,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			//k[i].paint(g);
 			
 			cm[i].paint(g);
+			//cp[i].paint(g);
+			//cpu[i].paint(g);
+			//cba[i].paint(g);
+			//ck[i].paint(g);
 			
 			//score
 			g.setFont(verdana);//set the font
@@ -164,6 +169,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			k[i] = new Kiwi();
 			
 			cm[i] = new CutWatermelon();
+			//cp[i] = new CutPineapple();
+			//cpu[i] = new CutPumpkin();
+			//cba[i] = new CutBanana();
+			//ck[i] = new CutKiwi();
 		}
 		
 		Timer t = new Timer(16, this);
@@ -220,27 +229,27 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
-				cm[i].setEnabled(true);
+				cm[i].setAppear(true);
 				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
 				//point.play();
-				//cp[e].setEnabled(true);
+				//cp[i].setAppear(true);
 				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
 				//point.play();
-				//cpu[r].setEnabled(true);
+				//cpu[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
 				//point.play();
-				//cba[t].setEnabled(true);
+				//cba[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
 				//point.play();
-				//ck[y].setEnabled(true);
+				//ck[i].setAppear(true);
 				p1Score+=50;
 			}
 		}
