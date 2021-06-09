@@ -95,7 +95,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				
 				cp[e].updateVelY(hello);
 				cp[e].updateVelX(hi*bye);
-				cp[e].setX(m[w].getX());
+				cp[e].setX(p[e].getX());
 			}
 			e++;
 			c3=0;
@@ -111,7 +111,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				
 				cpu[r].updateVelY(hello);
 				cpu[r].updateVelX(hi*bye);
-				cpu[r].setX(m[w].getX());
+				cpu[r].setX(pu[r].getX());
 			}
 			r++;
 			c4=0;
@@ -127,7 +127,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				
 				cba[t].updateVelY(hello);
 				cba[t].updateVelX(hi*bye);
-				cba[t].setX(m[w].getX());
+				cba[t].setX(ba[t].getX());
 			}
 			t++;
 			c5=0;
@@ -143,24 +143,24 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				
 				ck[y].updateVelY(hello);
 				ck[y].updateVelX(hi*bye);
-				ck[y].setX(m[w].getX());
+				ck[y].setX(k[y].getX());
 			}
 			y++;
 			c6=0;
 		}
 		for(int i = 0; i<100;i++) {
-			//b[i].paint(g);
-			//m[i].paint(g);
+			b[i].paint(g);
+			m[i].paint(g);
 			p[i].paint(g);
-			//pu[i].paint(g);
-			//ba[i].paint(g);
-			//k[i].paint(g);
+			pu[i].paint(g);
+			ba[i].paint(g);
+			k[i].paint(g);
 			
-			//cm[i].paint(g);
+			cm[i].paint(g);
 			cp[i].paint(g);
-			//cpu[i].paint(g);
-			//cba[i].paint(g);
-			//ck[i].paint(g);
+			cpu[i].paint(g);
+			cba[i].paint(g);
+			ck[i].paint(g);
 			
 			//score
 			g.setFont(verdana);//set the font

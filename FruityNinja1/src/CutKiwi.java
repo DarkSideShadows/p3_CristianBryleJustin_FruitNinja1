@@ -24,7 +24,7 @@ public class CutKiwi {
 			return;
 		}
 		tx.setToTranslation(x, y);
-		tx.scale(1.2, 1.2);
+		tx.scale(0.15, 0.15);
 		update();
 		if(!appear) {
 			return;

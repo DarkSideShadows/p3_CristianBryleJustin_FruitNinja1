@@ -59,6 +59,21 @@ public class Pumpkin {
 	public void updateVelX(int pvx) {
 		vx = pvx;
 	}
+	public int getVX() {
+		return vx;
+	}
+	public int getVY() {
+		return vy;
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int py) {
+		y = py;
+	}
 	public void setX(int px) {
 		x = px;
 	}
