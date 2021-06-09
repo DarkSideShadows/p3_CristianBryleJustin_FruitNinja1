@@ -32,7 +32,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	int q,w,e,r,t,y = 0;
 	
 	int p1Score = 0;
-	Font verdana = new Font("Verdana", Font.BOLD,40);
+	Font verdana = new Font("Verdana", Font.BOLD,45);
 
 	Music bang = new Music("bababooey.wav",false);
 	Music point = new Music("androidsound.wav",false);
@@ -40,6 +40,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		foreground.paint(g);
+		g.setFont(verdana);
+		g.setColor(Color.WHITE);
 		
 		int hi = 1;
 		if((int)(Math.random()*2)==1) {
@@ -69,12 +71,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			if(m[w].isEnabled()) {
 				m[w].updateVelY(hello);
 				m[w].updateVelX(hi*bye);
-//				if(cm[w].isEnabled()) {
-//					cm[w].setX(m[w].getX());
-//					cm[w].setY(m[w].getY());
-//					cm[w].updateVelY(m[w].getVY());
-//					cm[w].updateVelX(m[w].getVX());
-//				}
+				
+				cm[w].updateVelY(hello);
+				cm[w].updateVelX(hi*bye);
+				cm[w].setX(m[w].getX());
 			}
 			w++;
 			c2=0;
@@ -124,19 +124,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			c6=0;
 		}
 		for(int i = 0; i<100;i++) {
-			b[i].paint(g);
+			//b[i].paint(g);
 			m[i].paint(g);
-			p[i].paint(g);
-			pu[i].paint(g);
-			ba[i].paint(g);
-			k[i].paint(g);
+			//p[i].paint(g);
+			//pu[i].paint(g);
+			//ba[i].paint(g);
+			//k[i].paint(g);
 			
-			//cm[i].paint(g);
+			cm[i].paint(g);
 			
 			//score
 			g.setFont(verdana);//set the font
 			//drawing text on the screen + using variables
-			g.drawString(""+p1Score, 150,100);		   
+			g.drawString(""+p1Score, 30,50);		   
 			 	
 			   
 		}
@@ -220,7 +220,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 //			}
 			if(m[i].collide(mX, mY)) {
 				//point.play();
-				cm[w].setEnabled(true);
+				cm[i].setEnabled(true);
 				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
