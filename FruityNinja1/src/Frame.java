@@ -136,7 +136,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			t++;
 			c5=0;
 		}
-		if(c6==302) {
+		if(c6==202) {
 			k[y].setEnabled(true);
 			ck[y].setEnabled(true);
 			int hello = (int)(Math.random()*(-7+26+1)-26);
@@ -166,15 +166,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			cba[i].paint(g);
 			ck[i].paint(g);
 			
+			g.setFont(verdana);//set the font
+			//drawing text on the screen + using variables
+			g.drawString(""+p1Score, 30,50);	
+			
 			//score
 			 if(b[i].getHi()) {
 				 g.setFont(lose);//set the font
-				 g.drawString("Game Over", 150,250);	
-			 }
-
-			g.setFont(verdana);//set the font
-			//drawing text on the screen + using variables
-			g.drawString(""+p1Score, 30,50);		   
+				 g.drawString("Game Over", 150,250);
+				 return;
+			 }	   
 		}
 	}
 	
