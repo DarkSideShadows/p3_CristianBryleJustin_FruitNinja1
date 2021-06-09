@@ -14,7 +14,7 @@ public class CutBanana {
 	boolean enabled, appear = false;
 	
 	public CutBanana() {
-		img = getImage("cutbanana.png");
+		img = getImage("banana dead.png");
 		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
 		y = 600; //place cut fruit outside
 	}
