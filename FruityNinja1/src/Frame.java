@@ -216,7 +216,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		bang.play();
 	}
 
 	@Override
@@ -256,39 +255,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		int mY =arg0.getY();
 		for(int i = 0; i<100;i++) {
 			if(b[i].collide(mX, mY)) {
-				//point.play();
 				b[i].setHi(true);
+				point.play();
 			}
 			if(m[i].collide(mX, mY)) {
-				//point.play();
 				cm[i].setAppear(true);
+				bang.play();
 				p1Score+=10;
 			}
 			if(p[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cp[i].setAppear(true);
 				p1Score+=20;
 			}
 			if(pu[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cpu[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(ba[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				cba[i].setAppear(true);
 				p1Score+=5;
 			}
 			if(k[i].collide(mX, mY)) {
-				//point.play();
+				bang.play();
 				ck[i].setAppear(true);
 				p1Score+=50;
 			}
-
-			if(m[i].collide(mX, mY)) {
-				
-			}
-
 		}
 		
 	}
