@@ -24,12 +24,12 @@ public class Pumpkin {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(0.9, 0.9);
 		
 		update();
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+30-vx,y+55-vy,135,85);
 	}
 	
@@ -41,7 +41,9 @@ public class Pumpkin {
 			vy-=acc;
 		}
 		if(y>600) {
-			y=999999999;
+			y=600;
+			x = (int)(Math.random()*(650-100+1)+100);
+			enabled=false;
 		}
 		y+=vy;
 		x+=vx;

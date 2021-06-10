@@ -24,12 +24,13 @@ public class Kiwi {
 		if(!enabled) {
 			return;
 		}
-		Graphics2D g2 = (Graphics2D) g;
-		g2.drawImage(img, tx, null);
 		tx.setToTranslation(x, y);
 		tx.scale(0.35, 0.35);
 		
 		update();
+		
+		Graphics2D g2 = (Graphics2D) g;
+		g2.drawImage(img, tx, null);
 		//g.drawRect(x+25-vx,y+25-vy,76,40);
 	}
 	
@@ -41,7 +42,9 @@ public class Kiwi {
 			vy-=acc;
 		}
 		if(y>600) {
-			y=999999999;
+			y=600;
+			x = (int)(Math.random()*(650-100+1)+100);
+			enabled=false;
 		}
 		y+=vy;
 		x+=vx;
