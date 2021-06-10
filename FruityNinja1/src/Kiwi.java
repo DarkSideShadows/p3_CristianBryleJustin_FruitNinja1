@@ -42,7 +42,9 @@ public class Kiwi {
 			vy-=acc;
 		}
 		if(y>600) {
-			y=999999999;
+			y=600;
+			x = (int)(Math.random()*(650-100+1)+100);
+			enabled=false;
 		}
 		y+=vy;
 		x+=vx;

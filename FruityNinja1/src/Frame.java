@@ -71,6 +71,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			q++;
 			c1=0;
+			if(q==99) {
+				q=0;
+			}
 		}
 		if(c2==53) { //every melon is active for 53*16 ms
 			m[w].setEnabled(true);
@@ -87,7 +90,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			w++;
 			c2=0;
-		}
+			if(w==99) {
+				w=0;
+			}
+		}	
 		if(c3==111) {
 			p[e].setEnabled(true);
 			cp[e].setEnabled(true);
@@ -103,6 +109,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			e++;
 			c3=0;
+			if(e==99) {
+				e=0;
+			}
 		}
 		if(c4==164) {
 			pu[r].setEnabled(true);
@@ -119,6 +128,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			r++;
 			c4=0;
+			if(r==99) {
+				r=0;
+			}
 		}
 		if(c5==121) {
 			ba[t].setEnabled(true);
@@ -135,6 +147,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			t++;
 			c5=0;
+			if(t==99) {
+				t=0;
+			}
 		}
 		if(c6==202) {
 			k[y].setEnabled(true);
@@ -151,9 +166,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			}
 			y++;
 			c6=0;
+			if(y==99) {
+				y=0;
+			}
 		}
 		for(int i = 0; i<100;i++) {
-			
 			b[i].paint(g);
 			m[i].paint(g);
 			p[i].paint(g);
@@ -178,7 +195,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				 return;
 			 }	   
 		}
-    
 	}
 	
 	public static void main(String[] arg) {
