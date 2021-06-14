@@ -80,7 +80,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				q=0;
 			}
 		}
-		if(c2==53) { //every melon is active for 53*16 ms
+		if(c2==73) { //every melon is active for 53*16 ms
 			m[w].setEnabled(true);
 			cm[w].setEnabled(true);
 			int hello = (int)(Math.random()*(-7+26+1)-26);
@@ -175,13 +175,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				y=0;
 			}
 		}
-		for(int i = 0; i < pointCount; i++)
-        {   
-            g.drawLine(points[i].x, points[i].y-22, pointends[i].x, pointends[i].y-22); //draw line here            
-            if(foreground.getEn()) {
-            	foreground.paint(g);
-            }
-        }
+//		for(int i = 0; i < pointCount; i++)
+//        {   
+//            g.drawLine(points[i].x, points[i].y-22, pointends[i].x, pointends[i].y-22); //draw line here            
+//            if(foreground.getEn()) {
+//            	foreground.paint(g);
+//            }
+//        }
 		for(int i = 0; i<100;i++) {
 			b[i].paint(g);
 			m[i].paint(g);

@@ -15,8 +15,8 @@ public class CutWatermelon {
 	
 	public CutWatermelon() {
 		img = getImage("cutwatermelon.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
-		y = 600; //place cut fruit outside
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
+		y = 600; //place melon outside
 	}
 	
 	public void paint(Graphics g) {

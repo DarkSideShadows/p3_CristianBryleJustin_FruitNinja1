@@ -1,4 +1,4 @@
-import java.awt.Graphics;
+	import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -16,7 +16,7 @@ public class Kiwi {
 	
 	public Kiwi() {
 		img = getImage("kiwi.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
 		y = 600; //place kiwi outside
 	}
 	

@@ -16,7 +16,7 @@ public class CutPineapple {
 	public CutPineapple() {
 		img = getImage("cutpineapple.png");
 		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
-		y = 600; //place cut fruit outside
+		y = 600; //place pineapple outside
 	}
 	
 	public void paint(Graphics g) {

@@ -15,8 +15,8 @@ public class CutBanana {
 	
 	public CutBanana() {
 		img = getImage("banana dead.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
-		y = 600; //place cut fruit outside
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
+		y = 600; //place banana outside
 	}
 	
 	public void paint(Graphics g) {
