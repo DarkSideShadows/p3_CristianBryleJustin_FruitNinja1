@@ -16,7 +16,7 @@ public class Melon {
 	
 	public Melon() {
 		img = getImage("watermelon.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
 		y = 600; //place melon outside
 	}
 	

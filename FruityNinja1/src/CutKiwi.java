@@ -15,8 +15,8 @@ public class CutKiwi {
 	
 	public CutKiwi() {
 		img = getImage("cutkiwi.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
-		y = 600; //place cut fruit outside
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
+		y = 600; //place kiwi outside
 	}
 	
 	public void paint(Graphics g) {

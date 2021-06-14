@@ -15,8 +15,8 @@ public class CutPumpkin {
 	
 	public CutPumpkin() {
 		img = getImage("pumpkin dead.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
-		y = 600; //place cut fruit outside
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
+		y = 600; //place pumpkin outside
 	}
 	
 	public void paint(Graphics g) {

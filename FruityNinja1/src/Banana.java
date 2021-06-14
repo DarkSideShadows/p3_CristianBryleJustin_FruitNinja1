@@ -16,7 +16,7 @@ public class Banana {
 	
 	public Banana() {
 		img = getImage("banana alive.png");
-		x = (int)(Math.random()*(650-100+1)+100); //randomize x within the frame
+		x = (int)(Math.random()*(650-100+1)+100);; //randomize x within the frame
 		y = 600; //place banana outside
 	}
 	

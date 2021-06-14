@@ -3,8 +3,10 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -32,6 +34,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	CutBanana[] cba = new CutBanana[100];
 	CutKiwi[] ck = new CutKiwi[100];
 
+	private Point points[] = new Point[10000];
+	private Point pointends[] = new Point[10000];
+	private int pointCount = 0;
 	
 	int c1,c2,c3,c4,c5,c6;
 	int q,w,e,r,t,y = 0;
@@ -75,7 +80,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				q=0;
 			}
 		}
-		if(c2==53) { //every melon is active for 53*16 ms
+		if(c2==73) { //every melon is active for 53*16 ms
 			m[w].setEnabled(true);
 			cm[w].setEnabled(true);
 			int hello = (int)(Math.random()*(-7+26+1)-26);
@@ -170,6 +175,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				y=0;
 			}
 		}
+//		for(int i = 0; i < pointCount; i++)
+//        {   
+//            g.drawLine(points[i].x, points[i].y-22, pointends[i].x, pointends[i].y-22); //draw line here            
+//            if(foreground.getEn()) {
+//            	foreground.paint(g);
+//            }
+//        }
 		for(int i = 0; i<100;i++) {
 			b[i].paint(g);
 			m[i].paint(g);
@@ -186,7 +198,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 			
 			g.setFont(verdana);//set the font
 			//drawing text on the screen + using variables
-			g.drawString(""+p1Score, 30,50);	
+			g.drawString(""+p1Score, 30,50);
 			
 			//score
 			 if(b[i].getHi()) {
@@ -251,13 +263,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		foreground.setEn(false);
+		if(pointCount < points.length) {
+            points[pointCount] = arg0.getPoint(); //this might be the start of the line
+            pointends[pointCount] = arg0.getPoint(); //this is the end of the line
+            pointCount++;
+        }
 		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		foreground.setEn(true);
 	}
 
 	@Override
@@ -302,7 +320,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 				p1Score+=50;
 			}
 		}
-		
+		pointends[pointCount - 1] = arg0.getPoint(); 
+		//this is the line connecting the dogs
+		//or the line "dragged" between
 	}
 	
 	@Override
@@ -310,6 +330,4 @@ public class Frame extends JPanel implements ActionListener, MouseListener, Mous
 		// TODO Auto-generated method stub
 		
 	}
-
 }
-
